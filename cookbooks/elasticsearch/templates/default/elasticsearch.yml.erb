@@ -45,7 +45,7 @@ gateway:
   #
   # Set gateway.type to one of: [none, local, fs, hadoop, s3]
   #
-  type:                         s3
+  type:                         <%= @elasticsearch[:gateway_type] %>
   #
   # recovery begins when recover_after_nodes are present and then either
   # recovery_after_time has passed *or* expected_nodes have shown up.
@@ -135,7 +135,7 @@ index:
       # segments. Any segments below this size are considered to be on the same
       # level (even if they vary drastically in size) and will be merged
       # whenever there are mergeFactor of them. This effectively truncates the
-      # “long tail” of small segments that would otherwise be created into a
+      # "long tail" of small segments that would otherwise be created into a
       # single level. If you set this too large, it could greatly increase the
       # merging cost during indexing (if you flush many small
       # segments). Defaults to 2mb.

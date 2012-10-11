@@ -62,6 +62,7 @@ default[:elasticsearch][:refresh_interval]        = "1s"
 default[:elasticsearch][:snapshot_interval]       = "10s"
 default[:elasticsearch][:snapshot_on_close]       = "true"
 
+default[:elasticsearch][:gateway_type]            = "local"
 default[:elasticsearch][:seeds]                   = nil
 
 default[:elasticsearch][:recovery_after_nodes]    = 2
