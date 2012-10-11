@@ -236,7 +236,7 @@ discovery:
   type:                         zen
   zen:
     ping:
-      <%- if @elasticsearch[:seeds].nil? %>
+      <%- if @elasticsearch[:seeds].nil? or @elasticsearch[:seeds].empty? %>
       multicast:
         enabled:                true
       <%- else %>
